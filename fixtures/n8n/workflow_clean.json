@@ -1,0 +1,15 @@
+{
+  "name": "clean-workflow (HAND-WRITTEN fixture, modeled on a real export)",
+  "nodes": [
+    {"parameters": {}, "type": "n8n-nodes-base.manualTrigger", "typeVersion": 1,
+     "position": [0, 0], "id": "a1", "name": "Start"},
+    {"parameters": {"assignments": {"assignments": [
+       {"id": "x1", "name": "greeting", "value": "hello", "type": "string"}]}},
+     "type": "n8n-nodes-base.set", "typeVersion": 3.4,
+     "position": [208, 0], "id": "a2", "name": "Edit Fields"}
+  ],
+  "pinData": {},
+  "connections": {"Start": {"main": [[{"node": "Edit Fields", "type": "main", "index": 0}]]}},
+  "active": false,
+  "settings": {"executionOrder": "v1"}
+}

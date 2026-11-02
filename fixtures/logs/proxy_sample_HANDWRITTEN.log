@@ -1,0 +1,4 @@
+1698483601.123    250 10.0.0.5 TCP_TUNNEL/200 5120 CONNECT api.openai.com:443 - HIER_DIRECT/104.18.0.1 -
+1698483605.456    300 10.0.0.5 TCP_TUNNEL/200 8210 CONNECT api.openai.com:443 - HIER_DIRECT/104.18.0.1 -
+1698483610.789     90 10.0.0.7 TCP_MISS/200 900 GET https://generativelanguage.googleapis.com/v1/models - HIER_DIRECT/142.250.0.1 text/json
+1698483615.000    120 10.0.0.7 TCP_MISS/200 700 GET https://example.org/index.html - HIER_DIRECT/93.184.216.34 text/html

@@ -1,0 +1,41 @@
+name: AI-BOM scan
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege: read the code, and write only what SARIF upload needs.
+permissions:
+  contents: read
+  security-events: write
+
+env:
+  SCAN_PATH: demo_project   # what to scan (the demo folder has FAKE keys on purpose)
+  FAIL_ON: high             # low | medium | high | critical | off  ("off" = report only)
+
+jobs:
+  ai-bom:
+    runs-on: ubuntu-latest
+    steps:
+      # For production, pin every action to a full commit SHA instead of a version tag,
+      # so a compromised tag can't change what runs in your pipeline.
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Scan and write SARIF (never fails the build by itself)
+        run: python -m mini_aibom scan "$SCAN_PATH" -f sarif -o results.sarif
+
+      - name: Upload results to GitHub code scanning
+        uses: github/codeql-action/upload-sarif@v4
+        continue-on-error: true   # private repos without code scanning enabled would fail here
+        with:
+          sarif_file: results.sarif
+
+      - name: Gate (fails the build at or above FAIL_ON; prints the readable table)
+        if: ${{ env.FAIL_ON != 'off' }}
+        run: python -m mini_aibom scan "$SCAN_PATH" --fail-on "$FAIL_ON"

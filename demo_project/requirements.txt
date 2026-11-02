@@ -1,0 +1,7 @@
+# demo project, every secret and key in here is FAKE
+flask==3.0.0
+requests>=2.31
+openai==1.30.0
+langchain
+langchain-openai==0.1.0
+chromadb

@@ -1,0 +1,10 @@
+Oct 28 09:00:01 dnsmasq[123]: query[A] api.openai.com from 192.168.1.10
+Oct 28 09:00:05 dnsmasq[123]: query[A] api.openai.com from 192.168.1.10
+Oct 28 09:00:09 dnsmasq[123]: query[A] api.anthropic.com from 192.168.1.20
+Oct 28 09:01:00 dnsmasq[123]: query[A] www.example.com from 192.168.1.10
+
+Oct 28 09:02:00 dnsmasq[123]: query[A] api.openai.com.evil.example from 192.168.1.30
+Oct 28 09:02:10 dnsmasq[123]: query[A] myapi.openai.com from 192.168.1.30
+Oct 28 09:02:20 dnsmasq[123]: query[A] notopenai.com from 192.168.1.30
+this line is garbage ??? !!! ////
+Oct 28 09:03:00 dnsmasq[123]: query[A] api.openai.com from 192.168.1.30

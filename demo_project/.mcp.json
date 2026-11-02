@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"]
+    },
+    "pinned-tool": {
+      "command": "npx",
+      "args": ["-y", "some-server@1.2.3"],
+      "env": { "API_TOKEN": "${API_TOKEN}" }
+    },
+    "risky-remote": {
+      "url": "http://tools.example.com/mcp",
+      "env": { "SERVICE_SECRET": "abc123-not-a-real-secret" }
+    }
+  }
+}

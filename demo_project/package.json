@@ -1,0 +1,8 @@
+{
+  "name": "demo-frontend",
+  "dependencies": {
+    "express": "^4.18.0",
+    "@anthropic-ai/sdk": "latest",
+    "@langchain/core": "^0.2.0"
+  }
+}

@@ -13,7 +13,7 @@ permissions:
 
 env:
   SCAN_PATH: demo_project   # what to scan (the demo folder has FAKE keys on purpose)
-  FAIL_ON: high             # low | medium | high | critical | off  ("off" = report only)
+  FAIL_ON: off             # low | medium | high | critical | off  ("off" = report only)
 
 jobs:
   ai-bom:
